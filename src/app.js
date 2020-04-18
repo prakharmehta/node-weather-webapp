@@ -6,6 +6,9 @@ const forecast = require('./utils/forecast');
 
 const app = express();
 
+//port provided by heroku---->process.env.PORT
+const port = process.env.PORT || 3000   
+
 //Define paths fo express config
 const publicDirectoryPath = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
@@ -67,7 +70,7 @@ app.get('/weather', (req, res) => {
 
     // res.send({
     //     forecast: 'Rainy',
-    //     location: 'Jaipur',
+    //     location: 'Jaipur', 
     //     address: req.query.address
     // })
 })
@@ -102,5 +105,5 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => console.log('Server is up on port 3000')
+app.listen(port, () => console.log(`Server is up on port ${port}`)
  );
