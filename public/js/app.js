@@ -1,5 +1,3 @@
-console.log('Client side js file is loaded!');
-
 const form = document.querySelector('form')
 const search = document.querySelector('input')
 const msgOne = document.querySelector('#msg-1')
